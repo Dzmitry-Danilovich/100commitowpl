@@ -8,13 +8,12 @@ def rozpoznaj_mowe():
         audio = recognizer.listen(source)
 
     try:
-        text = recognizer.recognize_google(audio, language="pl-PL")
+        text = recognizer.recognize_google(audio, language="en-US")
         print("Rozpoznano: " + text)
     except sr.UnknownValueError:
         print("Nie rozpoznano mowy")
     except sr.RequestError as e:
         print("Błąd serwera; {0}".format(e))
-
 
 while True:
     rozpoznaj_mowe()
