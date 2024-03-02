@@ -1,6 +1,9 @@
 import speech_recognition as sr
+import commands
 
 recognizer = sr.Recognizer()
+
+
 def rozpoznaj_mowe():
     with sr.Microphone() as source:
         print("Proszę mówić...")
@@ -10,10 +13,21 @@ def rozpoznaj_mowe():
     try:
         text = recognizer.recognize_google(audio, language="en-US")
         print("Rozpoznano: " + text)
+
+        if "YouTube" in text:
+            commands.open_youtube()
+
+        if "close" in text:
+            raise KeyboardInterrupt
+
     except sr.UnknownValueError:
         print("Nie rozpoznano mowy")
     except sr.RequestError as e:
         print("Błąd serwera; {0}".format(e))
 
-while True:
-    rozpoznaj_mowe()
+
+try:
+    while True:
+        rozpoznaj_mowe()
+except KeyboardInterrupt:
+    print("Program zakończony.")
