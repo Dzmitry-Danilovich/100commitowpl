@@ -14,11 +14,7 @@ def rozpoznaj_mowe():
         text = recognizer.recognize_google(audio, language="en-US")
         print("Rozpoznano: " + text)
 
-        if "YouTube" in text:
-            commands.open_youtube()
-
-        if "close" in text:
-            raise KeyboardInterrupt
+        commands.check(text)
 
     except sr.UnknownValueError:
         print("Nie rozpoznano mowy")
