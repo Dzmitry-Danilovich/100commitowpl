@@ -9,3 +9,6 @@ def check(text):
 
     elif "YouTube" in text:
         return webbrowser.open('https://www.youtube.com')
+
+    else:
+        return f"Nie raspoznany tekst: {text}"
