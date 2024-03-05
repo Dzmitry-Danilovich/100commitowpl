@@ -12,6 +12,7 @@ def rozpoznaj_mowe():
 
     try:
         text = recognizer.recognize_google(audio, language="en-US")
+        print(text)
         commands.check(text)
 
     except sr.UnknownValueError:
