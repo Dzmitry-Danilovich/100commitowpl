@@ -1,0 +1,1 @@
+#program powienien otwierać aplikacji i foldery
