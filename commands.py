@@ -13,6 +13,6 @@ def check(text):
     elif "scrapping" in text:
         scraping.get_html_content( panel_url.enter_url())
     elif "Open Aplication":
-        return open_application.run_application()
+        return open_application.run_application(application_path, arguments=[])
     else:
         return f"Nie raspoznany tekst: {text}"
