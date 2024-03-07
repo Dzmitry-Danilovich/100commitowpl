@@ -1,5 +1,3 @@
-#program powienien otwierać aplikacji i foldery
-
 import subprocess
 
 def run_application(application_path, arguments=[]):
