@@ -1,8 +1,10 @@
 import subprocess
 
-def run_application(application_path, arguments=[]):
-    try:
-        subprocess.run([application_path] + arguments)
-    except Exception as e:
-        print(f"Błąd podczas uruchamiania aplikacji: {e}")
-
+class AplicationOpen:
+    def __init__(self, app_name):
+        self.app_name = app_name
+    def launch(self):
+        try:
+            subprocess.run(['open', '-a', self.app_name])
+        except Exception as e:
+            print(f"Błąd: {e}")
