@@ -2,6 +2,7 @@ import webbrowser
 import panel_url
 import scraping
 import open_application
+import programming_mode
 
 def check(text):
     if "close" in text:
@@ -16,5 +17,7 @@ def check(text):
         return open_application.AplicationOpen("Telegram Lite").launch()
     elif "Discord" in text:
         return open_application.AplicationOpen("Discord").launch()
+    elif "start programming mode" in text:
+        return programming_mode.programming_mode()
     else:
         return f"Nie raspoznany tekst: {text}"
