@@ -1,5 +1,6 @@
 import speech_recognition as sr
 import commands
+import time
 
 recognizer = sr.Recognizer()
 
@@ -24,5 +25,7 @@ def rozpoznaj_mowe():
 try:
     while True:
         rozpoznaj_mowe()
+        time.sleep(3)
+
 except KeyboardInterrupt:
     print("Program zakończony.")

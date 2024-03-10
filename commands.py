@@ -19,5 +19,7 @@ def check(text):
         return open_application.AplicationOpen("Discord").launch()
     elif "start programming mode" in text:
         return programming_mode.programming_mode()
+    elif "add a note" in text:
+        return open_application.AplicationOpen("Notes").launch()
     else:
         return f"Nie raspoznany tekst: {text}"
