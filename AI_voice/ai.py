@@ -1,0 +1,1 @@
+#napisać własną sztuczną intelegencje do raspoznowanie głosu
