@@ -1,5 +1,9 @@
+import time
+
 import pyautogui
 import speech_recognition as sr
+import time
+
 recognizer = sr.Recognizer()
 def add_notes():
     with sr.Microphone() as source:
@@ -16,5 +20,6 @@ def add_notes():
         print("Błąd serwera; {0}".format(e))
 
     pyautogui.click(536, 53)
-
     pyautogui.typewrite(text)
+    time.sleep(3)
+    pyautogui.click(27, 53)
