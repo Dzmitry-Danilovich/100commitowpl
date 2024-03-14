@@ -1,5 +1,5 @@
 import tkinter as tk
-
+from PIL import ImageGrab
 
 class DrawingApp:
     def __init__(self, root):
@@ -18,6 +18,9 @@ class DrawingApp:
         clear_button = tk.Button(root, text="Wyczyść", command=self.clear_canvas)
         clear_button.pack()
 
+        save_button = tk.Button(root, text="Zapisz", command=self.save_canvas)
+        save_button.pack()
+
     def draw(self, event):
         x, y = event.x, event.y
         if self.last_x and self.last_y:
@@ -25,13 +28,19 @@ class DrawingApp:
         self.last_x = x
         self.last_y = y
 
-    def reset(self):
+    def reset(self, event):
         self.last_x = None
         self.last_y = None
 
     def clear_canvas(self):
         self.canvas.delete("all")
 
+    def save_canvas(self):
+        x = self.root.winfo_rootx() + self.canvas.winfo_rootx()
+        y = self.root.winfo_rooty() + self.canvas.winfo_rooty()
+        x1 = x + self.canvas.winfo_width() - 10
+        y1 = y + self.canvas.winfo_height() - 55
+        ImageGrab.grab(bbox=(x, y, x1, y1)).save("imag.png")
 
 if __name__ == "__main__":
     root = tk.Tk()
