@@ -6,6 +6,7 @@ from study import study
 
 class DrawingApp:
     #cooments
+    #coments
     def __init__(self, root):
         self.root = root
         self.root.title("Prosta aplikacja do rysowania")
