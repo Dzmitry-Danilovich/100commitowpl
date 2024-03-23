@@ -5,6 +5,7 @@ from PIL import ImageGrab
 from study import study
 
 class DrawingApp:
+    #coments
     def __init__(self, root):
         self.root = root
         self.root.title("Prosta aplikacja do rysowania")
