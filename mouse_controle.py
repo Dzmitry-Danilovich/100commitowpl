@@ -17,7 +17,7 @@ def add_notes():
     except sr.RequestError as e:
         print("Błąd serwera; {0}".format(e))
 
-    #comments
+    #comments ok
     pyautogui.click(536, 53)
     pyautogui.typewrite(text)
     time.sleep(3)
